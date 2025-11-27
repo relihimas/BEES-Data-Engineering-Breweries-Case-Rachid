@@ -81,7 +81,6 @@ The goal of this test is to assess your skills in consuming data from an API, tr
       "source_query": "page=46&per_page=200",
       "creation_timestamp": "20251127 14:53:52",
       "batch_id": "8b52-d06be5",
-      "error_count": 0,
       "bronze_target": "breweries_bronze",
       "body": [{}]
    }
