@@ -11,3 +11,22 @@ The goal of this test is to assess your skills in consuming data from an API, tr
 - Orchestration: This project will use Airflow v4.1.0.
 - DataLake Architecture: Data will follow the Medallion Architecture.
 - Monitoring/Alerts: 
+
+
+# Walktrough
+
+First, start the application by building the image:
+
+    docker build -t bees-case .
+
+And then, run it:
+
+    docker run -d -p 8000:8000 --name beescontainer bees-case
+
+PS: It's preferable to deploy this app into a linux operational system. 
+
+Also, if you do not have the Docker installed in your instance, please, follow these instructions: [Install Docker Engine on Ubuntu](https://docs.docker.com/engine/install/ubuntu/).
+
+## How it works?
+
+After correctly initialization, the server will be up and running into the deployed instance.
