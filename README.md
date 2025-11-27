@@ -6,11 +6,46 @@ The goal of this test is to assess your skills in consuming data from an API, tr
 ![image]
 
 # Features
-- Breweries Data: Using the Open Brewery DB API to fetch data, listing breweries companies: [Open Brewery DB List Breweries](https://www.openbrewerydb.org/documentation#list-breweries).
+- Breweries Data: Using the Open Brewery DB API to fetch data, listing breweries companies: [Open Brewery DB](https://www.openbrewerydb.org/).
 - Docker Support: Easily deployable using Docker.
 - Orchestration: This project will use Airflow v4.1.0.
 - DataLake Architecture: Data will follow the Medallion Architecture.
 - Monitoring/Alerts: 
+
+## Breweries Data:
+
+1. Fetch Data from the [API List Breweries](https://www.openbrewerydb.org/documentation#list-breweries)
+
+   The data consists in a list of JSON items with the following body:
+
+    GET https://api.openbrewerydb.org/v1/breweries
+   
+    ```json
+    {
+        "id": "5128df48-79fc-4f0f-8b52-d06be54d0cec",
+        "name": "(405) Brewing Co",
+        "brewery_type": "micro",
+        "address_1": "1716 Topeka St",
+        "address_2": null,
+        "address_3": null,
+        "city": "Norman",
+        "state_province": "Oklahoma",
+        "postal_code": "73069-8224",
+        "country": "United States",
+        "longitude": -97.46818222,
+        "latitude": 35.25738891,
+        "phone": "4058160490",
+        "website_url": "http://www.405brewing.com",
+        "state": "Oklahoma",
+        "street": "1716 Topeka St"
+    }
+   ```
+    Also, we can use the Query Parameters available on the Docs
+    
+    <img width="1103" height="535" alt="Captura de Tela 2025-11-27 às 13 43 47" src="https://github.com/user-attachments/assets/1268bfa7-98b2-4179-91e2-c74f1e322786" />
+
+
+3. 
 
 
 # Walktrough
@@ -28,6 +63,4 @@ And then, run it:
 
 Also, if you do not have the Docker installed in your instance, please, follow these instructions: [Install Docker Engine on Ubuntu](https://docs.docker.com/engine/install/ubuntu/).
 
-## How it works?
 
-After correctly initialization, the server will be up and running into the deployed instance.
