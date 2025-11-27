@@ -32,7 +32,7 @@ The goal of this test is to assess your skills in consuming data from an API, tr
    - The code will extract from the MetaData API the total amount of Breweries;
    - The code will use this total amount of Breweries as variable to determinate the amount of pages for the API List Breweries;
    - The code will run the API List Breweries and extract from each page a total of 200 Breweries;
-   - The code will save the list as a JSON file for the following purposes:
+   - The code will save the list as a JSON file with it's generated metadata for the following purposes:
      - Retention and recovery > Can easily reprocess from the original source without relying on the external system.
      - Traceability  > Storing raw data supports traceability and regulatory compliance (LGPD). 
      - Imutability > Unaltered state of the data, ensuring you always have an immutable snapshot for reference.
@@ -41,12 +41,9 @@ The goal of this test is to assess your skills in consuming data from an API, tr
      - Schema evolution > Keep the original data to adapt in any case of Bronze schema changes.
      - Quality > enables comparison between raw and processed data.
       
+3. Data Schema:
 
-
-
-   The data consists in a list of JSON items with the following body:
-
-    GET https://api.openbrewerydb.org/v1/breweries
+   Each brewery entry contains the following fields:
    
     ```json
     {
@@ -72,8 +69,23 @@ The goal of this test is to assess your skills in consuming data from an API, tr
     
     <img width="1103" height="535" alt="Captura de Tela 2025-11-27 às 13 43 47" src="https://github.com/user-attachments/assets/1268bfa7-98b2-4179-91e2-c74f1e322786" />
 
+4. Meta Data:
 
-5. 
+    For
+
+   ```json
+   {
+      "file_name": "bees_listbreweries_20251127_145352.json"
+      "total_amount_breweries": 9.038,
+      "source_endpoint": "https://api.openbrewerydb.org/v1/breweries",
+      "source_query": "page=46&per_page=200˜
+      "creation_timestamp": "20251127 14:53:52",
+      "batch_id": "8b52-d06be5",
+      "error_count: 0,
+      "bronze_target": "breweries_bronze",
+      "body": [...]
+   }
+   ```
 
 
 # Walktrough
