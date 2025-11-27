@@ -71,7 +71,7 @@ The goal of this test is to assess your skills in consuming data from an API, tr
 
 4. Meta Data:
 
-    For
+    For best practice the code will add the following fields:
 
    ```json
    {
@@ -87,8 +87,7 @@ The goal of this test is to assess your skills in consuming data from an API, tr
    }
    ```
 
-
-# Walktrough
+# Docker Support
 
 > [!WARNING]
 Deploy this application into a **Linux** Operational System.
