@@ -3,21 +3,17 @@ BEES Data Engineering - Breweries Case - Rachid
 
 The goal of this test is to assess your skills in consuming data from an API, transforming and persisting it into a data lake following the medallion architecture with three layers: raw data, curated data partitioned by location, and an analytical aggregated layer.
 
-📊 Project Status
+# 📊 Project Status
 
-Status: Active
+- Status: Active
+- Last Dataset Update:
+- Maintenance: Actively maintained by owner
+- Dataset Size: 8,000+ breweries
 
-Last Dataset Update: 
+# 🔧 Requirements
 
-Maintenance: Actively maintained by owner
-
-Dataset Size: 8,000+ breweries
-
-
-🔧 Requirements
-
-- Python v
-- Docker v
+- Python v or higher
+- Docker v or higher
 
 # Features
 - Breweries Data: Using the Open Brewery DB API to fetch data, listing breweries companies: [Open Brewery DB](https://www.openbrewerydb.org/).
@@ -29,14 +25,22 @@ Dataset Size: 8,000+ breweries
 ## Breweries Data:
 
 1. Main Goal:
-   Fetch Data from the [API List Breweries](https://www.openbrewerydb.org/documentation#list-breweries)
+   - Fetch Data from the [API List Breweries](https://www.openbrewerydb.org/documentation#list-breweries)
 
 2. Logic:
 
-   a. The code will extract from the MetaData API the total amount of Breweries;
-   b. The code will use this total amount of Breweries as variable to determinate the amount of pages for the API List Breweries;
-   c. The code will run the API List Breweries and extract from each page a total of 200 Breweries;
-   d. 
+   - The code will extract from the MetaData API the total amount of Breweries;
+   - The code will use this total amount of Breweries as variable to determinate the amount of pages for the API List Breweries;
+   - The code will run the API List Breweries and extract from each page a total of 200 Breweries;
+   - The code will save the list as a JSON file for the following purposes:
+     - Retention and recovery > Can easily reprocess from the original source without relying on the external system.
+     - Traceability  > Storing raw data supports traceability and regulatory compliance (LGPD). 
+     - Imutability > Unaltered state of the data, ensuring you always have an immutable snapshot for reference.
+     - Easy for reprocessing > Can restart the downstream transformation without new API calls.
+     - Source decoupling > Reduces depency on external APIs or system, avoiding downtimes.
+     - Schema evolution > Keep the original data to adapt in any case of Bronze schema changes.
+     - Quality > enables comparison between raw and processed data.
+      
 
 
 
