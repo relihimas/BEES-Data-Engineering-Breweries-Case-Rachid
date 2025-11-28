@@ -18,7 +18,7 @@ The goal of this test is to assess your skills in consuming data from an API, tr
 # Features
 - Breweries Data: Using the Open Brewery DB API to fetch data, listing breweries companies: [Open Brewery DB](https://www.openbrewerydb.org/).
 - Docker Support: Easily deployable using Docker.
-- Orchestration: This project will use Airflow v4.1.0.
+- Orchestration: This project will use Airflow v3.1.3.
 - DataLake Architecture: Data will follow the Medallion Architecture.
 - Monitoring/Alerts: 
 
