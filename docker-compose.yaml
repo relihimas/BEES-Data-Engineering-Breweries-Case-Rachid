@@ -284,54 +284,53 @@ services:
       airflow-init:
         condition: service_completed_successfully
 
-  spark-master:
-    container_name: spark-master
-    build: .
-    image: spark-image
-    entrypoint: ['./entrypoint.sh', 'master']
-    healthcheck:
-      test: [ "CMD", "curl", "-f", "http://localhost:8000" ]
-      interval: 5s
-      timeout: 3s
-      retries: 3
-    volumes:
-      - ./scripts:/opt/spark/scripts
-      - ./data:/opt/spark/data
-      - spark-logs:/opt/spark/spark-events
-    env_file:
-      - .env
-    ports:
-      - '8000:8000'
-      - '7077:7077'
+  # spark-master:
+  #   container_name: spark-master
+  #   build: .
+  #   image: spark-image
+  #   entrypoint: ['./entrypoint.sh', 'master']
+  #   healthcheck:
+  #     test: [ "CMD", "curl", "-f", "http://localhost:8000" ]
+  #     interval: 5s
+  #     timeout: 3s
+  #     retries: 3
+  #   volumes:
+  #     - ./scripts:/opt/spark/scripts
+  #     - ./data:/opt/spark/data
+  #     - spark-logs:/opt/spark/spark-events
+  #   env_file:
+  #     - .env
+  #   ports:
+  #     - '8000:8000'
+  #     - '7077:7077'
 
-  spark-history-server:
-    container_name: spark-history
-    image: spark-image
-    entrypoint: ['./entrypoint.sh', 'history']
-    depends_on:
-      - spark-master
-    env_file:
-      - .env
-    volumes:
-      - ./scripts:/opt/spark/scripts
-      - ./data:/opt/spark/data
-      - spark-logs:/opt/spark/spark-events
-    ports:
-      - '18080:18080'
+  # spark-history-server:
+  #   container_name: spark-history
+  #   image: spark-image
+  #   entrypoint: ['./entrypoint.sh', 'history']
+  #   depends_on:
+  #     - spark-master
+  #   env_file:
+  #     - .env
+  #   volumes:
+  #     - ./scripts:/opt/spark/scripts
+  #     - ./data:/opt/spark/data
+  #     - spark-logs:/opt/spark/spark-events
+  #   ports:
+  #     - '18080:18080'
 
-  spark-worker:
-    container_name: spark-worker
-    image: spark-image
-    entrypoint: ['./entrypoint.sh', 'worker']
-    depends_on:
-      - spark-master
-    env_file:
-      - .env
-    volumes:
-      - ./scripts:/opt/spark/scripts
-      - ./data:/opt/spark/data
-      - spark-logs:/opt/spark/spark-events
+  # spark-worker:
+  #   container_name: spark-worker
+  #   image: spark-image
+  #   entrypoint: ['./entrypoint.sh', 'worker']
+  #   depends_on:
+  #     - spark-master
+  #   env_file:
+  #     - .env
+  #   volumes:
+  #     - ./scripts:/opt/spark/scripts
+  #     - ./data:/opt/spark/data
+  #     - spark-logs:/opt/spark/spark-events
 
 volumes:
   postgres-db-volume:
-  spark-logs:
