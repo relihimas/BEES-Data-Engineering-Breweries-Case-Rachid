@@ -1,25 +1,27 @@
 # <img width="127" height="51" alt="Captura de Tela 2025-11-27 às 13 12 47" src="https://github.com/user-attachments/assets/d61c7c6d-79e0-48d3-a980-1ae2e2a8fd96" />
 BEES Data Engineering - Breweries Case - Rachid
 
+<img width="1448" height="593" alt="v1" src="https://github.com/user-attachments/assets/da4e0768-cf1b-40b9-9d92-a0f742bace05" />
+
 The goal of this test is to assess your skills in consuming data from an API, transforming and persisting it into a data lake following the medallion architecture with three layers: raw data, curated data partitioned by location, and an analytical aggregated layer.
 
 # 📊 Project Status
 
 - Status: Active
-- Last Dataset Update:
-- Maintenance: Actively maintained by owner
-- Dataset Size: 8,000+ breweries
+- Maintenance: Actively maintained by Rachid Elihimas
+- Dataset Size: 9,000+ breweries
 
 # 🔧 Requirements
 
-- Python v or higher
-- Docker v or higher
+- Linux
 
 # Features
 - Breweries Data: Using the Open Brewery DB API to fetch data, listing breweries companies: [Open Brewery DB](https://www.openbrewerydb.org/).
-- Docker Support: Easily deployable using Docker.
+- Docker: Using Docker Composo with other Dockerfiles for support.
 - Orchestration: This project will use Airflow v3.1.3.
-- DataLake Architecture: Data will follow the Medallion Architecture.
+- Database: Postgres SQL (already provided by Airflow)
+- Programming Language: Python (with PySpark)
+- DataLake Architecture: Medallion Architecture.
 - Monitoring/Alerts: 
 
 ## Breweries Data:
@@ -91,16 +93,10 @@ The goal of this test is to assess your skills in consuming data from an API, tr
 > [!WARNING]
 Deploy this application into a **Linux** Operational System.
 
-First, start the application by building the image:
-
-    docker build -t bees-case .
-
-And then, run it:
-
-    docker run -d -p 8000:8000 --name beescontainer bees-case
-
 Also, if you do not have the Docker installed in your instance, please, follow these instructions: [Install Docker Engine on Ubuntu](https://docs.docker.com/engine/install/ubuntu/).
 
-# Orchestration
+# Airflow Orchestration
+# Spark / PySpark
+# Postgres SQL
 
 
