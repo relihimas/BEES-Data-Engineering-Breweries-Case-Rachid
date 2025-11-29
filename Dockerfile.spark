@@ -1,10 +1,6 @@
-FROM spark:4.0.1-scala2.13-java21-ubuntu
+FROM bitnami/spark:latest
 
 USER root
-
-RUN set -ex; \
-    apt-get update; \
-    apt-get install -y python3 python3-pip; \
-    rm -rf /var/lib/apt/lists/*
-
-USER spark
+RUN mkdir -p /opt/spark/jars
+ADD https://jdbc.postgresql.org/download/postgresql-42.7.3.jar /opt/spark/jars/
+USER 1001

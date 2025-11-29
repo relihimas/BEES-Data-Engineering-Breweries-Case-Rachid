@@ -7,3 +7,7 @@ pyvenv.cfg
 /raw_data/
 bees_listbreweries_*.json
 share\py4j
+/dags/sql/create_table.sql
+/dags/bronze_extraction_brewerieslist_dag.py
+/dags/gold_transformation_brewerieslist_dag.py
+/dags/silver_transformation_brewerieslist_dag.py

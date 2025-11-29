@@ -5,8 +5,7 @@ from airflow.operators.python import PythonOperator
 from datetime import datetime, timedelta
 
 from pyspark.sql import SparkSession
-from airflow.providers.apache.spark.operators.spark_submit import SparkSubmitOperator
-
+from pyspark.sql.types import StructType, StructField, StringType, IntegerType
 
 def quality_gate(body) -> bool:
     """
@@ -24,7 +23,7 @@ def bronze_extraction():
     try:
         # 1. Cria a SparkSession (em modo local [*])
         spark = SparkSession.builder \
-            .appName("LocalPySparkJob") \
+            .appName("bronze_app") \
             .master("local[*]") \
             .getOrCreate()
         
@@ -35,11 +34,8 @@ def bronze_extraction():
         
         # 3. Executa uma transformação/visualização
         print("\n--- DataFrame Criado ---")
-        df.show()
-        
-        total_quantity = df.agg({"Quantidade": "sum"}).collect()[0][0]
-        print(f"\nQuantidade total de itens: {total_quantity}")
-        
+        df_dir.show()
+
         # 4. Encerra a SparkSession
         spark.stop()
         print("Sessão Spark encerrada.")

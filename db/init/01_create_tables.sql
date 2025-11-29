@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS silver_breweries (
+CREATE TABLE IF NOT EXISTS bronze_breweries (
 
     id VARCHAR(36) PRIMARY KEY NOT NULL,
     name VARCHAR(255) NOT NULL,
@@ -16,9 +16,7 @@ CREATE TABLE IF NOT EXISTS silver_breweries (
     latitude NUMERIC(10, 7),
     phone VARCHAR(50),
     website_url VARCHAR(255),
+    source_json_body JSONB NOT NULL,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
-
-CREATE INDEX idx_breweries_name ON silver_breweries (name);
-CREATE INDEX idx_breweries_type ON silver_breweries (brewery_type);
