@@ -58,7 +58,13 @@ def raw_extraction():
                     "street": "1716 Topeka St"
                 }]
 
-        spark = SparkSession.builder.appName("raw_breweries").master("local[*]").getOrCreate()
+        spark = (
+                    SparkSession.builder
+                    .appName("raw_breweries")
+                    .master("local[*]")
+                    .config("spark.jars", "/opt/airflow/jars/postgresql-42.7.3.jar")
+                    .getOrCreate()
+                )
         schema = StructType([
                     StructField("id", StringType(), True),
                     StructField("name", StringType(), True),
