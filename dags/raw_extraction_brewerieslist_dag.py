@@ -45,7 +45,7 @@ def raw_extraction():
             "body": lst_breweries
         }
 
-        with open(f"{cst.savefilepathraw}/{file_name}", "w", encoding="utf-8") as f:
+        with open(f"{cst.savefilepath}/{file_name}", "w", encoding="utf-8") as f:
             json.dump(rawjson, f, ensure_ascii=False, indent=2)
 
         return True
