@@ -1,23 +1,25 @@
 # <img width="127" height="51" alt="Captura de Tela 2025-11-27 às 13 12 47" src="https://github.com/user-attachments/assets/d61c7c6d-79e0-48d3-a980-1ae2e2a8fd96" />
 BEES Data Engineering - Breweries Case - Rachid
 
-# 👷 Main Architecture:
+In a hurry? [Installation](#instalation)
+
+## 👷 Main Architecture:
 
 <img width="1448" height="593" alt="v1" src="https://github.com/user-attachments/assets/da4e0768-cf1b-40b9-9d92-a0f742bace05" />
 
 The goal of this test is to assess your skills in consuming data from an API, transforming and persisting it into a data lake following the medallion architecture with three layers: raw data, curated data partitioned by location, and an analytical aggregated layer.
 
-# 📊 Project Status
+## 📊 Project Status
 
 - Status: Active
 - Maintenance: Actively maintained by Rachid Elihimas
 - Dataset Size: 9,000+ breweries
 
-# 🔧 Requirements
+## 🔧 Requirements
 
 - Linux with Git and Docker installed.
 
-# Features
+## Features
 - Breweries Data: Using the Open Brewery DB API to fetch data, listing breweries companies: [Open Brewery DB](https://www.openbrewerydb.org/).
 - Docker: Using Docker Composo with other Dockerfiles for support.
 - Orchestration: This project will use Airflow v3.1.3.
@@ -91,7 +93,7 @@ The goal of this test is to assess your skills in consuming data from an API, tr
    }
    ```
 
-# Git
+## Git
 
 Be sure that you have your Git installed and up to date.
 
@@ -100,7 +102,7 @@ sudo apt update
 sudo apt install -y git
 ```
 
-# Docker Support
+## Docker Support
 
 ```bash
 sudo apt update
@@ -121,6 +123,10 @@ sudo usermod -aG docker $USER
 
 If you have any issue or doubt during the installation, consult the original documentation: [Install Docker Engine on Ubuntu](https://docs.docker.com/engine/install/ubuntu/).
 
-# Airflow Orchestration | Spark / PySpark | Postgres SQL
+## Airflow Orchestration | Spark / PySpark | Postgres SQL
 
 Those three features will be made available through Docker Compose and Dockerfile files.
+
+## Installation
+
+Please, follow those steps for running this app:
