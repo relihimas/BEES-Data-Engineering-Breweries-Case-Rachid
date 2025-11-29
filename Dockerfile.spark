@@ -1,6 +1,8 @@
 FROM bitnami/spark:latest
 
 USER root
-RUN mkdir -p /opt/spark/jars
-ADD https://jdbc.postgresql.org/download/postgresql-42.7.3.jar /opt/spark/jars/
+
+RUN wget https://jdbc.postgresql.org/download/postgresql-42.7.3.jar \
+    -O /opt/bitnami/spark/jars/postgresql-42.7.3.jar
+
 USER 1001
